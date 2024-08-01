@@ -23,5 +23,11 @@ public class level1_basic1 {
 			System.out.println("양수가 아니다.");
 		}
 
+		// 삼항연산자
+		System.out.print("정수를 하나 입력하세요 : ");
+		int num = scanner.nextInt();
+		String result = (num > 0) ? "양수다." : "양수가 아니다.";
+		System.out.println(result);
+
 	}
 }
