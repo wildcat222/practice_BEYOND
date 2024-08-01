@@ -49,7 +49,7 @@ public class level3_hard4 {
                 num = scanner.nextInt();
             } else {
                 System.out.println("정답입니다. " + count + "회 만에 정답을 맞추셨습니다.");
-                break;
+                break; // 성공 시 무한 루프 탈출
             }
 
         }
