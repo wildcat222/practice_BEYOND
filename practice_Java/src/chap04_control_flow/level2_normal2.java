@@ -14,8 +14,12 @@ public class level2_normal2 {
          *
          * 계산 예시) BMI = 67 / (1.7 * 1.7)
          * */
-        double height = 1.7;
-        int weight = 67;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("키를 입력하세요. (소수점 첫째자리이에서 반올림) : ");
+        int height_cm = scanner.nextInt();
+        double height = (double) height_cm / 100;
+        System.out.print("체중을 입력하세요. (소수점 첫째자리에서 반올림) : ");
+        int weight = scanner.nextInt();
         double BMI = weight / (height * height);
 
         if (BMI < 20) {
