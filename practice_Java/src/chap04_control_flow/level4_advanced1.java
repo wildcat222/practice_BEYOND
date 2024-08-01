@@ -39,5 +39,6 @@ public class level4_advanced1 {
             if (eng < 40) System.out.println("영어 점수 미달로 불합격입니다.");
             if (mat < 40) System.out.println("수학 점수 미달로 불합격입니다.");
         }
+
     }
 }
