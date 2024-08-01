@@ -24,6 +24,7 @@ public class level2_normal5 {
             } else {
                 System.out.print("박");
             }
+
         }
     }
 
