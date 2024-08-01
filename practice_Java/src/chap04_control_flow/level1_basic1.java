@@ -14,7 +14,7 @@ public class level1_basic1 {
 		 * 양수다.
 		 * */
         Scanner scanner = new Scanner(System.in);
-        System.out.println("정수를 하나 입력하세요 : ");
+        System.out.print("정수를 하나 입력하세요 : ");
         int i = scanner.nextInt();
 
 		if (i > 0) {
@@ -22,5 +22,6 @@ public class level1_basic1 {
 		} else {
 			System.out.println("양수가 아니다.");
 		}
+
 	}
 }

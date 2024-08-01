@@ -15,7 +15,19 @@ public class level1_basic2 {
          * 홀수다.
          * */
         Scanner scanner = new Scanner(System.in);
-        
+        System.out.print("정수를 하나 입력하세요 : ");
+        int i = scanner.nextInt();
 
+        if (i % 2 == 0) {
+            System.out.println("짝수다.");
+        } else {
+            System.out.println("홀수다.");
+        }
+
+        // 삼항연산자
+        System.out.print("정수를 하나 입력하세요 : ");
+        int j = scanner.nextInt();
+        String num = (j % 2 == 0) ? "짝수다." : "홀수다.";
+        System.out.println(num);
     }
 }
