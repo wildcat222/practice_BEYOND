@@ -27,26 +27,26 @@ public class level3_hard4 {
          * */
 
 
-        Random random = new Random();
+        Random random = new Random(); // 난수 발생
         int rNum = (int) (Math.random() * 100);
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("정수를 입력하세요 : ");
+        Scanner scanner = new Scanner(System.in); // 입력값 받기
+        System.out.print("정수를 입력하세요 : ");
         int num = scanner.nextInt();
 
-        int count = 0;
+        int count = 0; // 도전 횟수를 위한 변수
 
-        for (int i = 0; ; ) {
+        for (int i = 0; ; ) { // 성공 할 때까지 무한 루프
             if (num > rNum) {
                 System.out.println("입력하신 정수보다 작습니다.");
                 count++;
-                System.out.println("정수를 입력하세요 : ");
-                num = scanner.nextInt(); continue;
+                System.out.print("정수를 입력하세요 : ");
+                num = scanner.nextInt();
             } else  if (num < rNum) {
                 System.out.println("입력하신 정수보다 큽니다.");
                 count++;
-                System.out.println("정수를 입력하세요 : ");
-                num = scanner.nextInt(); continue;
+                System.out.print("정수를 입력하세요 : ");
+                num = scanner.nextInt();
             } else {
                 System.out.println("정답입니다. " + count + "회 만에 정답을 맞추셨습니다.");
                 break;
