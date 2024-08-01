@@ -54,12 +54,5 @@ public class level3_hard4 {
 
         }
 
-
-
-
-        if (num == rNum) {
-                System.out.println("정답입니다. " + count + "회 만에 정답을 맞추셨습니다.");
-        }
-
     }
 }
