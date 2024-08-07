@@ -1,4 +1,4 @@
-package chpa07_polymorphism.com.ohgiraffers.level01.basic;
+package chpa08_polymorphism.com.ohgiraffers.level01.basic;
 
 public class Application {
     public static void main(String[] args) {
