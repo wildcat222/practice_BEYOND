@@ -1,8 +1,5 @@
 package chap04_control_flow;
 
-import java.util.Scanner;
-import java.util.regex.Pattern;
-
 public class level3_hard5 {
     public static void main(String[] args) {
 
@@ -32,28 +29,6 @@ public class level3_hard5 {
          * -- 출력 예시 --
          * 영문자가 아닌 문자가 포함되어 있습니다.
          * */
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("문자열 입력 : ");
-        String input = scanner.nextLine();
-
-        for (int i = 0; i < input.length(); i++) {
-            if (!(input.charAt(i) >= 'a' && input.charAt(i) <= 'z') && !(input.charAt(i) >= 'A' && input.charAt(i) <= 'Z')) {
-                System.out.println("영문자가 아닌 문자가 포함되어 있습니다.");
-                return;
-            }
-        }
-
-        int count = 0;
-        System.out.print("문자 입력 : ");
-        char search = scanner.next().charAt(0);
-        for (int i = 0; i < input.length(); i++) {
-            if (input.charAt(i) == search) {
-                count++;
-            }
-        }
-        System.out.println("포함된 갯수 : " + count + "개");
 
     }
 
