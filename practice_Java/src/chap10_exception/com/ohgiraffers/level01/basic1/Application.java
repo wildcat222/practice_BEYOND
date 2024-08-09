@@ -1,8 +1,5 @@
-package chap10_exception.com.ohgiraffers.level01.basic;
+package chap10_exception.com.ohgiraffers.level01.basic1;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.nio.Buffer;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -42,7 +39,7 @@ public class Application {
         try {
             x = new Application().Divide();
             System.out.println(x);
-        } catch (DoNotZero | insertInt e) {
+        } catch (DoNotZero | InsertInt e) {
             System.out.println(e.getMessage());
         } finally {
             System.out.println("실행이 완료되었습니다.");
@@ -62,7 +59,7 @@ public class Application {
         } catch (ArithmeticException e) {
             throw new DoNotZero("오류 : 0으로 나누는 것은 허용되지 않습니다.");
         } catch (InputMismatchException e) {
-            throw new insertInt("오류 : 유효한 정수를 입력하세요.");
+            throw new InsertInt("오류 : 유효한 정수를 입력하세요.");
         }
         return n;
     }
