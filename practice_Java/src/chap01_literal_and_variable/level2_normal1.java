@@ -10,5 +10,9 @@ public class level2_normal1 {
          * 문자 a의 unicode : 97
          * */
 
+        char ch = 'a';
+        int unicode = ch;
+        System.out.println("문자 a의 unicode : " + unicode);
+
     }
 }

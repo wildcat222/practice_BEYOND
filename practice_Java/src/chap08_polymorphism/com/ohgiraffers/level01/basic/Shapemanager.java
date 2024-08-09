@@ -1,4 +1,4 @@
-package chpa08_polymorphism.com.ohgiraffers.level01.basic;
+package chap08_polymorphism.com.ohgiraffers.level01.basic;
 
 import java.util.Arrays;
 
