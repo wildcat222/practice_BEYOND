@@ -1,5 +1,8 @@
 package chap11_io.com.ohgiraffers.level01.basic;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 public class Application2 {
     public static void main(String[] args) {
         /* ----- 입력 예시 -----
@@ -23,6 +26,9 @@ public class Application2 {
          * 오류 : origin2.txt (지정된 파일을 찾을 수 없습니다)
          *
          */
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
 
     }
 }
