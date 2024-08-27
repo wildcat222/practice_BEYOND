@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
                 .append("<form action=\"/login\" method=\"post\">")
                 .append("<label>이름 : </label><input type=\"text\" name=\"name\">")
                 .append("<br>")
-                .append("<label>P/W : </label><input type=\"text\" name=\"password\">")
+                .append("<label>P/W : </label><input type=\"password\" name=\"password\">")
                 .append("<br>")
                 .append("<input type=\"submit\" value=\"로그인\">")
                 .append("</form>")
