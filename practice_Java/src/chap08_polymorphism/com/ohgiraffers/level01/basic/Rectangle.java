@@ -13,8 +13,8 @@ public class Rectangle extends Shape implements Resizable {
 
     @Override
     public void resize(double factor) {
-        width *= width;
-        height *= height;
+        width *= factor;
+        height *= factor;
     }
 
     @Override
