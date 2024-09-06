@@ -37,6 +37,7 @@ public class ProductPrint {
 
         // 4. 에러메시지를 출력하는 메소드
         //    (조건) 에러코드를 전달받아 에러를 알리는 메시지를 출력하세요.
+        System.out.println("전체 목록 조회에 실패했습니다.");
 
     }
 
