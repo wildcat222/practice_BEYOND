@@ -7,6 +7,17 @@
 <mapper namespace="com.management.product.model.dao.ProductDAO">
 
     <!-- 2. ProductDTO type의 resultMap을 설정하세요. -->
+    <resultMap id="productResultMap" type="ProductDTO" autoMapping="false">
+        <id property="productCode" column="PRODUCT_CODE"/>
+        <result property="productName" column="PRODUCT_NAME"/>
+        <result property="originCost" column="ORIGIN_COST"/>
+        <result property="releaseDate" column="RELEASE_DATE"/>
+        <result property="discountRate" column="DISCOUNT_RATE"/>
+        <result property="salesQuantity" column="SALES_QUANTITY"/>
+        <result property="stockQuantity" column="STOCK_QUANTITY"/>
+        <result property="categoryCode" column="CATEGORY_CODE"/>
+        <result property="productionStatus" column="PRODUCTION_STATUS"/>
+    </resultMap>
 
     <!-- 3. 전체 목록을 조회하는 쿼리를 작성하세요.
             (쿼리id) selectAllProductList -->
