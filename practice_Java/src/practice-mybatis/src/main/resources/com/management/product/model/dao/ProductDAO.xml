@@ -7,7 +7,7 @@
 <mapper namespace="com.management.product.model.dao.ProductDAO">
 
     <!-- 2. ProductDTO type의 resultMap을 설정하세요. -->
-    <resultMap id="productResultMap" type="ProductDTO" autoMapping="false">
+    <resultMap id="productResultMap" type="com.management.product.model.dao.ProductDAO" autoMapping="false">
         <id property="productCode" column="PRODUCT_CODE"/>
         <result property="productName" column="PRODUCT_NAME"/>
         <result property="originCost" column="ORIGIN_COST"/>
