@@ -81,8 +81,11 @@ public class ProductMenu {
             default : System.out.println("잘못된 번호입니다. 확인 후 다시 입력해 주세요."); break;
         }
 
-        SearchCondition searchCondition = new SearchCondition(searchOption, searchValue);
         // 주석을 지우고 searchCondition 검색조건과 검색어를 searchCondition 객체에 setting 하세요.
+        SearchCondition searchCondition = new SearchCondition();
+        searchCondition.setOption(searchOption);
+        searchCondition.setValue(searchValue);
+
         return searchCondition;
     }
 
@@ -109,8 +112,9 @@ public class ProductMenu {
         System.out.println("수정 대상 제품코드를 입력해 주세요 : ");
         String productCode = sc.nextLine();
 
-        ProductDTO productDTO = new ProductDTO();
         // 주석을 지우고 받아온 제품 코드를 productDTO 객체에 setting 하세요.
+        ProductDTO productDTO = new ProductDTO();
+        productDTO.setProductCode(productCode);
 
         getProductInfo(productDTO);
 
@@ -120,6 +124,8 @@ public class ProductMenu {
         String productionStatus = sc.nextLine().toUpperCase();
 
         // 주석을 지우고 받아온 활동 상태를 productDTO 객체에 setting 하세요.
+        productDTO.setSalesQuantity(salesQuantity);
+        productDTO.setProductionStatus(productionStatus);
 
         System.out.println("===================================");
 
@@ -143,8 +149,15 @@ public class ProductMenu {
         String discountRate  = sc.nextLine();
 
         // 주석을 지우고 받아온 정보들을 productDTO 객체에 setting 하세요.
+        ProductDTO productDTO1 = new ProductDTO();
+        productDTO1.setProductName(productName);
+        productDTO1.setCategoryCode(categoryCode);
+        productDTO1.setOriginCost(originCost);
+        productDTO1.setReleaseDate(releaseDate.replaceAll("-", ""));
+        productDTO1.setStockQuantity(stockQuantity);
+        productDTO1.setDiscountRate(discountRate);
 
-        return productDTO;
+        return productDTO1;
     }
 
     private static Map<String, String> inputProductCode() {
