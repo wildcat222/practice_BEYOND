@@ -71,7 +71,7 @@ public class ProductService {
         ProductDAO productDAO = sqlSession.getMapper(ProductDAO.class);
 
         int result = productDAO.deleteProduct(parameter);
-        return false;
+        return result > 0;
 
     }
 }

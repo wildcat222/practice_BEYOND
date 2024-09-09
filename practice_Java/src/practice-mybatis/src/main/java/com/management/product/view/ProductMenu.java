@@ -95,11 +95,11 @@ public class ProductMenu {
         System.out.println("===================================");
         System.out.println("등록할 새로운 제품 정보를 입력하세요. ");
         System.out.println("===================================");
-        ProductDTO productDTO = new ProductDTO();
-        getProductInfo(productDTO);
+        ProductDTO newProductDTO = new ProductDTO();
+        getProductInfo(newProductDTO);
         System.out.println("===================================");
 
-        return productDTO;
+        return newProductDTO;
     }
 
     private static ProductDTO inputModifyProductInfo() {
@@ -149,15 +149,15 @@ public class ProductMenu {
         String discountRate  = sc.nextLine();
 
         // 주석을 지우고 받아온 정보들을 productDTO 객체에 setting 하세요.
-        ProductDTO productDTO1 = new ProductDTO();
-        productDTO1.setProductName(productName);
-        productDTO1.setCategoryCode(categoryCode);
-        productDTO1.setOriginCost(originCost);
-        productDTO1.setReleaseDate(releaseDate.replaceAll("-", ""));
-        productDTO1.setStockQuantity(stockQuantity);
-        productDTO1.setDiscountRate(discountRate);
+        ProductDTO newProductDTO = new ProductDTO();
+        newProductDTO.setProductName(productName);
+        newProductDTO.setCategoryCode(categoryCode);
+        newProductDTO.setOriginCost(originCost);
+        newProductDTO.setReleaseDate(releaseDate.replaceAll("-", ""));
+        newProductDTO.setStockQuantity(stockQuantity);
+        newProductDTO.setDiscountRate(discountRate);
 
-        return productDTO1;
+        return newProductDTO;
     }
 
     private static Map<String, String> inputProductCode() {

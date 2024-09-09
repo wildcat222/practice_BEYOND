@@ -38,15 +38,15 @@ public class ProductPrint {
         // 3. 성공메시지를 출력하는 메소드
         //    (조건) 성공코드를 전달받아 성공을 알리는 메시지를 출력하세요.
         switch(successCode) {
-            case "selectAllProductList":
+            case "select":
                 System.out.println("전체 목록 조회 완료했습니다."); break;
-            case "selectProductByCondition":
+            case "byCondition":
                 System.out.println("조건에 맞는 제품 목록 조회 완료했습니다."); break;
-            case "registNewProduct":
+            case "insert":
                 System.out.println("제품 정보 등록 완료했습니다.."); break;
-            case "modifyProductInfo":
+            case "update":
                 System.out.println("제품 정보 수정 완료했습니다."); break;
-            case "deleteProduct":
+            case "delete":
                 System.out.println("제품 정보 삭제 완료했습니다."); break;
         }
 
@@ -57,15 +57,15 @@ public class ProductPrint {
         // 4. 에러메시지를 출력하는 메소드
         //    (조건) 에러코드를 전달받아 에러를 알리는 메시지를 출력하세요.
         switch(errorCode) {
-            case "selectAllProductList":
+            case "select":
                 System.out.println("전체 목록 조회에 실패했습니다."); break;
-            case "selectProductByCondition":
+            case "byCondition":
                 System.out.println("조건에 맞는 제품 목록 조회에 실패했습니다."); break;
-            case "registNewProduct":
+            case "insert":
                 System.out.println("제품 정보 등록 실패했습니다."); break;
-            case "modifyProductInfo":
+            case "update":
                 System.out.println("제품 정보 수정 실패했습니다."); break;
-            case "deleteProduct":
+            case "delete":
                 System.out.println("제품 정보 삭제 실패했습니다."); break;
         }
 

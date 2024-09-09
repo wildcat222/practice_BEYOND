@@ -18,42 +18,6 @@ public class ProductDTO {
     public ProductDTO() {
     }
 
-    public ProductDTO(String productCode
-            , String productName
-            , String originCost
-            , String releaseDate
-            , String discountRate
-            , String stockQuantity
-            , String categoryCode
-    ) {
-        this.productCode = productCode;
-        this.productName = productName;
-        this.originCost = originCost;
-        this.releaseDate = releaseDate.replaceAll("-", "");
-        this.discountRate = discountRate;
-        this.salesQuantity = "0";
-        this.stockQuantity = stockQuantity;
-        this.categoryCode = categoryCode;
-        this.productionStatus = "Y";
-    }
-
-    public ProductDTO(String productCode, String productName
-            , String originCost, String releaseDate
-            , String discountRate, String salesQuantity
-            , String stockQuantity, String categoryCode
-            , String productionStatus
-    ) {
-        this.productCode = productCode;
-        this.productName = productName;
-        this.originCost = originCost;
-        this.releaseDate = releaseDate.replaceAll("-", "");
-        this.discountRate = discountRate;
-        this.salesQuantity = "0";
-        this.stockQuantity = stockQuantity;
-        this.categoryCode = categoryCode;
-        this.productionStatus = "Y";
-    }
-
     public String getProductCode() {
         return productCode;
     }
