@@ -7,7 +7,7 @@
 <mapper namespace="com.management.product.model.dao.ProductDAO">
 
     <!-- 2. ProductDTO type의 resultMap을 설정하세요. -->
-    <resultMap id="productResultMap" type="com.management.product.model.dao.ProductDAO" autoMapping="false">
+    <resultMap id="productResultMap" type="ProductDAO" autoMapping="false">
         <id property="productCode" column="PRODUCT_CODE"/>
         <result property="productName" column="PRODUCT_NAME"/>
         <result property="originCost" column="ORIGIN_COST"/>
@@ -21,6 +21,20 @@
 
     <!-- 3. 전체 목록을 조회하는 쿼리를 작성하세요.
             (쿼리id) selectAllProductList -->
+    <select id="selectAllProductList" resultMap="productResultMap">
+        SELECT
+            PRODUCT_CODE,
+            PRODUCT_NAME,
+            ORIGIN_COST,
+            RELEASE_DATE,
+            DISCOUNT_RATE,
+            SALSE_QUANTITY,
+            STOCK_QUANTITY,
+            CATEGORY_CODE,
+            PRODUCTION_STATUS
+        FROM product_info
+        ORDER BY PRODUCT_CODE
+    </select>
 
     <!-- 4. 조건에 따른 목록을 조회하는 쿼리를 작성하세요.
             (쿼리id) selectProductByCondition
@@ -29,14 +43,64 @@
             (참고 2) 판매점 유형별 조회의 경우,
                      '백화점'이면 할인율이 0%인 제품, '아울렛'이면 할인율이 1% 이상인 제품을 조회합니다.
             (참고 3) 이달의 신상품 조희의 경우, 출시일이 이번 달인 제품(예를 들어, 현재 기준이면 2023년 5월 출시 제품)울 조회합니다. -->
+    <select id="selectProductByCondition" parameterType="SearchCondition" resultType="ProductDTO">
+        SELECT * FROM product_info
+        <where>
+            <if test="searchOption == 'productName'">
+                PRODUCT_NAME LIKE CONCAT('%', #{searchValue}, '%')
+            </if>
+            <if test="searchOption == 'salesStore'">
+                <choose>
+                    <when test="searchValue == '백화점'">
+                        DISCOUNT_RATE = 0
+                    </when>
+                    <when test="searchValue == '아울렛'">
+                        DISCOUNT_RATE > 0
+                    </when>
+                </choose>
+            </if>
+            <if test="searchOption == 'newProduct'">
+                SUBSTRING(RELEASE_DATE, 5, 2) = LPAD(MONTH(CURDATE()), 2, '0')
+            </if>
+            <if test="searchOption == 'nonProduction'">
+                PRODUCTION_STATUS = 'N'
+            </if>
+        </where>
+    </select>
 
     <!-- 5. 제품 정보를 등록하는 쿼리를 작성하세요.
             (쿼리id) insertProduct -->
+    <insert id="insertProduct" parameterType="ProductDTO">
+        INSERT INTO product_info
+            (PRODUCT_NAME, CATEGORY_CODE, PRODUCT_PRICE, RELEASE_DATE, STOCK_QUANTITY, DISCOUNT_RATE)
+        VALUES
+            (#{ productName }, #{ categoryCode }, #{ productPrice }, #{ releaseDate }, #{ stockQuantity }, #{ discountRate })
+
+
+    </insert>
 
     <!-- 6. 사용자가 수정을 원하는 데이터만 수정하도록 Dynamic Query를 활용한 쿼리를 작성하세요.
             (쿼리id) updateProduct -->
+    <update id="updateProduct" parameterType="ProductDTO">
+        UPDATE product_info
+        <set>
+            <if test = "productName != 'SKIP'">PRODUCT_NAME = #{ productName },</if>
+            <if test= "productName != 'SKIP'">CATEGORY_CODE = #{ categoryCode },</if>
+            <if test= "productName != 'SKIP'">PRODUCT_PRICE = #{ prodcutPrice },</if>
+            <if test= "productName != 'SKIP'">RELEASE_DATE = #{ releaseDate },</if>
+            <if test= "productName != 'SKIP'">STOCK_QUANTITY = #{ stockQuantity },</if>
+            <if test= "productName != 'SKIP'">DISCOUNT_RATE = #{ discountRate }</if>
+            <if test= "salesQuantity != 'SKIP'">SALSE_QUANTITY = #{ salesQuantity }</if>
+            <if test= "productionStatus != 'SKIP'">PRODUCTION_STATUS = #{ productionStatus }</if>
+        </set>
+        WHERE PRODUCT_CODE = #{ productCode }
+    </update>
 
     <!-- 7. 제품 정보를 삭제하는 쿼리를 작성하세요.
             (쿼리id) deleteProduct -->
+    <select id="deleteProduct" parameterType="java.lang.String">
+        DELETE FROM product_info
+        WHERE product_code = #{ productCode }
+    </select>
 
 </mapper>

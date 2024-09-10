@@ -10,11 +10,9 @@
 
 <!--    </settings>-->
 
-
-<!--    <typeAliases>-->
-
-<!--    </typeAliases>-->
-
+    <typeAliases>
+        <typeAlias type="com.management.product.model.dao.ProductDAO" alias="ProductDAO"/>
+    </typeAliases>
 
     <environments default="development">
         <environment id="development">
